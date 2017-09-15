@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="<%= url("/styles.css")%>">
+</head>
+
+<body>
+  <a href="/">Return to main menu</a>
+
+
+  <% @collection.each do |each| %>
+
+    <div class="block"><ul>
+      <li>First name: <%= each.first_name%></li>
+      <li>Last name: <%= each.last_name%></li>
+      <li>Email: <%= each.email%></li>
+      <li>Notes: <%= each.note%></li>
+    </ul></div>
+    <p>------!!---------</p>
+  <% end %>
+</body>
+
+</html>

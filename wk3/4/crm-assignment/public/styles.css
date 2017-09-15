@@ -1,0 +1,7 @@
+.block {
+  display: flex;
+  align-self: center;
+  color: blue;
+  background-color: red;
+  margin: 20px;
+}

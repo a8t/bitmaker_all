@@ -1,0 +1,38 @@
+html {
+  font-family: "Helvetica Neue", Helvetica,  Arial, sans-serif;
+  font-size: 55px;
+  line-height: 1.2;
+}
+
+p {
+  font-size:32px;
+  color: blue;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+h1 {
+  font-size: 48px;
+  background-color: chartreuse
+}
+
+.post {
+  color:red;
+  background-color:cadetblue;
+}
+
+
+.hero {
+  border: 10px dotted red;
+}
+
+#hero-unit {
+  background-color: bisque;
+}
+
+
+.post > h1 {
+  background-color: aquamarine;
+}
