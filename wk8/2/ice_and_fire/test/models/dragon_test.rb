@@ -19,7 +19,7 @@ class DragonTest < ActiveSupport::TestCase
 
   def test_that_young_dragons_from_asoiaf
     # use your knowledge of factories to make this test pass!
-    young_dragon = nil
+    young_dragon = build(:dragon, age: 1)
 
     # not allowed to change the assert statement!
     skip unless young_dragon
@@ -28,7 +28,7 @@ class DragonTest < ActiveSupport::TestCase
 
   def test_that_middle_dragons_from_targ_dynasty
     # use your knowledge of factories to make this test pass!
-    middle_dragon = nil
+    middle_dragon = build(:dragon, age: 20)
 
     # not allowed to change the assert statement!
     skip unless middle_dragon
@@ -37,7 +37,7 @@ class DragonTest < ActiveSupport::TestCase
 
   def test_that_ancient_dragons_from_age_of_valyria
     # use your knowledge of factories to make this test pass!
-    ancient_dragon = nil
+    ancient_dragon = build(:dragon, age: 9900000)
 
     # not allowed to change the assert statement!
     skip unless ancient_dragon
@@ -46,8 +46,8 @@ class DragonTest < ActiveSupport::TestCase
 
   def test_that_stranger_cannot_mount
     # use your knowledge of factories to make this test pass!
-    rider = nil
-    dragon = nil
+    rider = build(:rider, name: "Aegon")
+    dragon = build(:dragon, rider: nil, name: "Balerion")
 
     # not allowed to change the assert statement!
     skip unless rider && dragon
@@ -58,8 +58,8 @@ class DragonTest < ActiveSupport::TestCase
     # use your knowledge of factories to make this test pass!
     # Note: you'll need to do more than just supply the right names...
     # Hint: you can pass variables as properties too, not just strings!
-    rider = nil
-    dragon = nil
+    rider = build(:rider, name: "Aegon")
+    dragon = build(:dragon, rider: rider, name: "Balerion")
 
     # not allowed to change the assert statement!
     skip unless rider && dragon
