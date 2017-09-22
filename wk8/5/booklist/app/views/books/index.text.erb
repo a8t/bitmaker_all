@@ -1,0 +1,5 @@
+<% @books.each do | each_book | %>
+<%= each_book.title %> by <%= each_book.author %>
+<%= each_book.already_read ? "Already read!" : "Not read yet."%>
+
+<% end %>
