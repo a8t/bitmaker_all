@@ -1,0 +1,9 @@
+<% @books.each do | each_book | %>
+
+  <div class="eachbook" style="border:3px solid black; margin: 10px; padding: 10px">
+    <h1><%= each_book.title %></h1>
+    <p>by <%= each_book.author %></p>
+    <p><%= each_book.already_read ? "Already read!" : "Not read yet."%></p>
+  </div>
+
+<% end %>
