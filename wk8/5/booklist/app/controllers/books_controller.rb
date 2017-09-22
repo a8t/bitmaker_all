@@ -9,6 +9,9 @@ class BooksController < ApplicationController
       f.csv do
         render plain: Book.generate_csv(@books)
       end
+      f.json do
+        render json: @books
+      end
     end
   end
 
