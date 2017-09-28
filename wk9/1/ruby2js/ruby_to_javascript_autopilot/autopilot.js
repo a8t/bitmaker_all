@@ -29,8 +29,8 @@ const get_destination = (car) => {
 
 
 const fill_up_gas = (car) => {
-    let oldGas = car.gas
-    car.gas = 100
+    let oldGas = car.gas;
+    car.gas = 100;
     return `Filled up to ${ get_gas_display(car.gas) } on gas from ${ get_gas_display(oldGas) }.`
 }
 
@@ -48,38 +48,39 @@ const drive = (car, city_distance) => {
 }
 
 const drop_off_passengers = (car) => {
-    let previous_passengers = car.passengers
-    car.passengers = 0
+    let previous_passengers = car.passengers;
+    car.passengers = 0;
     return `Dropped off ${previous_passengers} passengers.`
 }
 
 const act = (car) => {
-    let distance_between_cities = 50
-
+    let distance_between_cities = 50;
+    
     if (car.gas < 20){
-        fill_up_gas(car)
+        return fill_up_gas(car);
     } else if (car.passengers < 3) {
-        pick_up_passenger(car)
+        return pick_up_passenger(car);
     } else {
-        if (car.gas < distance_between_cities){return fill_up_gas(car)}
-        let drove_to = drive(car, distance_between_cities)
-        let passengers_dropped = drop_off_passengers(car)
-        return `${drove_to} ${passengers_dropped}`
+        if (car.gas < distance_between_cities){ return fill_up_gas(car)};
+        let drove_to = drive(car, distance_between_cities);
+        let passengers_dropped = drop_off_passengers(car);
+        return `${drove_to} ${passengers_dropped}`;
     }
 }
 
 const command_fleet = (cars) => {
     cars.forEach((eachCar, index) => {
-        let action = act(car)
-        console.log(`Car ${i + 1}: ${action}`);
+        let action = act(eachCar)
+        console.log(`Car ${index + 1}: ${action}`);
     })
     console.log('---');
 }
 
+
 const add_one_car_per_day = (cars, num_days) => {
-    for (let i = 0; i < num_days.times; i++) {
+    for (let i = 0; i < num_days; i++) {
         let new_car = get_new_car
-        add_car(cars, new_car);
+        console.log(add_car(cars, new_car));
         command_fleet(cars)
     }
 }
