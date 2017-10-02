@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   close.onclick = closeModal
-  modal.onclick = closeModal
+  modal.onclick = closeModalg
 
   submit.onclick = (e) => {
     inputs.forEach(
