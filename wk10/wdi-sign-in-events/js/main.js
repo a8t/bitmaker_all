@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const close = document.querySelector(".close")
   const submit = document.querySelector(".submit")
   const inputs = document.querySelectorAll("input")
+  const form = document.querySelector(".getstarted")
+
+
+  // i thought it would be fun to do this with only Javascript. There are better solutions if you also change the CSS.
 
   signin.onclick = () => {
     modal.style.display = "block"
@@ -16,15 +20,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 100);
   }
 
-  modal.onclick = () => {
+  const closeModal = () => {
     modal.style.opacity = 0
     setTimeout(function () {
       modal.style.display = "none"
     }, 400);
   }
 
+  close.onclick = closeModal
+  modal.onclick = closeModal
+
   submit.onclick = (e) => {
-    e.stopPropagation()
     inputs.forEach(
       (eachInput) => {eachInput.classList += "error"}
     )
@@ -32,8 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   inputs.forEach(
     (eachInput) => {
-      eachInput.onclick = (e) => {
-        e.stopPropagation()
+      eachInput.onclick = () => {
         if (eachInput.className === "error") {
           eachInput.className = ""
         }
@@ -41,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   )
 
+  form.onclick = (e) => {e.stopPropagation()}
 
 
 });
