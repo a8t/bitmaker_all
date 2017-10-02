@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const winningState = (a, b, c) => currentState[a] === currentPlayer && currentState[b] === currentPlayer && currentState[c] === currentPlayer
   const winningStates = () => winningState(0, 1, 2) || winningState(3, 4, 5) || winningState(6, 7, 8) || winningState(0, 3, 7) || winningState(1, 4, 8) || winningState(2, 5, 9) || winningState(0, 4, 9) || winningState(2, 4, 7) 
 
-
   const checkHasState = e => e.target.innerHTML === ""
   const convertedCurrentState = (currentState) => currentState.map(
     eachElement => eachElement === currentPlayer ? currentPlayer : 0
