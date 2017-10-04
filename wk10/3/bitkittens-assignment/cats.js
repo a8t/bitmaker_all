@@ -1,9 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   const summonCats = document.querySelector('.summon-cats')
   const catboxes = document.querySelectorAll('.cat-box')
-  const cat1 = document.querySelector('#cat1')
-  const cat2 = document.querySelector('#cat2')
-  const cat3 = document.querySelector('#cat3')
 
   summonCats.onclick = e => {
     e.preventDefault()
